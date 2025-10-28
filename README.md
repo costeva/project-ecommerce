@@ -23,7 +23,7 @@
 
 ## Description
 
-[Nest](https://github.com/nestjs/nest) framework TypeScript starter repository.
+E-commerce API backend built with NestJS, TypeORM and PostgreSQL (Neon Database).
 
 ## Project setup
 
@@ -31,44 +31,47 @@
 $ npm install
 ```
 
+## Environment Variables
+
+Create a `.env` file in the root directory:
+
+```env
+DATABASE_HOST=your_database_host
+DATABASE_PORT=5432
+DATABASE_USER=your_database_user
+DATABASE_PASS=your_database_password
+DATABASE_NAME=your_database_name
+PORT=3000
+```
+
 ## Compile and run the project
 
 ```bash
 # development
-$ npm run start
-
-# watch mode
 $ npm run start:dev
 
 # production mode
+$ npm run build
 $ npm run start:prod
 ```
 
-## Run tests
+## API Endpoints
 
-```bash
-# unit tests
-$ npm run test
+- `GET /` - Health check
+- `POST /categories` - Create a category
+- `GET /categories` - Get all categories
+- `GET /categories/:id` - Get a category by id
+- `PATCH /categories/:id` - Update a category
+- `DELETE /categories/:id` - Delete a category
 
-# e2e tests
-$ npm run test:e2e
+## Deployment to Vercel
 
-# test coverage
-$ npm run test:cov
-```
+This project is configured to be deployed on Vercel. Follow these steps:
 
-## Deployment
-
-When you're ready to deploy your NestJS application to production, there are some key steps you can take to ensure it runs as efficiently as possible. Check out the [deployment documentation](https://docs.nestjs.com/deployment) for more information.
-
-If you are looking for a cloud-based platform to deploy your NestJS application, check out [Mau](https://mau.nestjs.com), our official platform for deploying NestJS applications on AWS. Mau makes deployment straightforward and fast, requiring just a few simple steps:
-
-```bash
-$ npm install -g @nestjs/mau
-$ mau deploy
-```
-
-With Mau, you can deploy your application in just a few clicks, allowing you to focus on building features rather than managing infrastructure.
+1. Push your code to GitHub
+2. Import your GitHub repository in Vercel
+3. Add environment variables in Vercel project settings
+4. Deploy!
 
 ## Resources
 
