@@ -12,6 +12,6 @@ export const typeOrmConfig=(configService:ConfigService): TypeOrmModuleOptions =
   autoLoadEntities: true,
   ssl: { rejectUnauthorized: false },
   synchronize: true,
-  logging: true,
+  logging: false,
   entities:[join(__dirname + '../../**/*.entity{.ts,.js}')],
 })

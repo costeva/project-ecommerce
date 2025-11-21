@@ -1,4 +1,5 @@
-import {BaseEntity, Column, Entity, PrimaryGeneratedColumn } from 'typeorm';
+import { Product } from 'src/products/entities/product.entity';
+import {BaseEntity, Column, Entity, OneToMany, PrimaryGeneratedColumn } from 'typeorm';
 
 
 @Entity()
@@ -8,5 +9,8 @@ export class Category extends BaseEntity {
 
     @Column({ type: 'varchar', length: 60, unique: true })
     name: string;
+
+    @OneToMany(()=> Product, (product) => product.category, {cascade:true}) //cascade sirve al agregar un producto con categoria nueva, se crea la categoria automaticamente.
+    products: Product[];
 
 }
