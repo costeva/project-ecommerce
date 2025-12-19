@@ -4,27 +4,30 @@ import { Column, Entity, ManyToMany, ManyToOne, PrimaryGeneratedColumn } from 't
 @Entity()
 
 export class Product {
-@PrimaryGeneratedColumn()
-id: number;
+    @PrimaryGeneratedColumn()
+    id: number;
 
 
-@Column({ type: 'varchar', length: 60 })
-name: string;
+    @Column({ type: 'varchar', length: 60 })
+    name: string;
 
-@Column({ type: 'varchar', length: 255, nullable: true, default: 'default.svg' })
-image: string;
+    @Column({ type: 'varchar', length: 255, nullable: true, default: 'default.svg' })
+    image: string;
 
-@Column({ type: 'decimal' })
-price: number;
+    @Column({ type: 'decimal' })
+    price: number;
 
-@Column({type:'int'})
-stock: number;
+    @Column({ type: 'int' })
+    stock: number;
 
-@Column({ type: 'varchar', length: 500 })
-description: string;
+    @Column({ type: 'varchar', length: 500 })
+    description: string;
 
-@ManyToOne(() =>Category)
-category: Category;
+    @Column()
+    categoryId: number;
+
+    @ManyToOne(() => Category)
+    category: Category;
 
 
 }
